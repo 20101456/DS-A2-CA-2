@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="Application.Controller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox fx:controller="Application.Controller" style="-fx-background-color: #406684;" xmlns:fx="http://javafx.com/fxml">
+    <MenuBar style="-fx-background-color: #AEC6CF;">
+        <Menu text="File">
+            <MenuItem onAction="#openImage" text="Open" />
+        </Menu>
+        <Menu text="Exit">
+            <MenuItem onAction="#Exit" text="Exit" />
+        </Menu>
+    </MenuBar>
+    <HBox style="-fx-padding: 10;" spacing="10">
+        <Pane fx:id="pane" style="-fx-background-color: #AEC6CF;">
+            <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+        </Pane>
+        <Pane fx:id="pane1" style="-fx-background-color: #AEC6CF;">
+            <ImageView fx:id="bwImageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+        </Pane>
+        <ListView fx:id="listView" style="-fx-background-color: #AEC6CF;"/>
+    </HBox>
+    <Separator style="-fx-padding: 10;" />
+    <VBox style="-fx-padding: 10;" spacing="10">
+        <HBox spacing="10">
+            <TextField fx:id="landmarkNameField" promptText="Eiffel Tower" />
+            <Label text="Name" style="-fx-text-fill: white;"/>
+            <TextField fx:id="streetNameField" promptText="5 Avenue Anatole France" />
+            <Label text="Street" style="-fx-text-fill: white;"/>
+            <TextField fx:id="culturalValueField" promptText="Historic" />
+            <Label text="Cultural Value" style="-fx-text-fill: white;"/>
+            <CheckBox text="Add Location" onAction="#toggleAddingLandmark" style="-fx-text-fill: white;"/>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Process" onAction="#processAndDisplayImage"/>
+            <Button text="Construct Graph" onAction="#constructGraphFromImage"/>
+        </HBox>
+    </VBox>
+    <Separator style="-fx-padding: 10;" />
 </VBox>
+

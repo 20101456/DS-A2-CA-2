@@ -14,10 +14,10 @@
     </MenuBar>
     <HBox style="-fx-padding: 10;" spacing="10">
         <Pane fx:id="pane" style="-fx-background-color: #AEC6CF;">
-            <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="false" />
         </Pane>
         <Pane fx:id="pane1" style="-fx-background-color: #AEC6CF;">
-            <ImageView fx:id="bwImageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bwImageView" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="false" />
         </Pane>
         <ListView fx:id="listView" style="-fx-background-color: #AEC6CF;"/>
     </HBox>
@@ -38,5 +38,24 @@
         </HBox>
     </VBox>
     <Separator style="-fx-padding: 10;" />
+    <VBox style="-fx-padding: 10;" spacing="10">
+        <HBox spacing="10">
+            <Label text="Landmark 1:" style="-fx-text-fill: white;"/>
+            <TextField fx:id="landmark1TextField"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Landmark 2:" style="-fx-text-fill: white;"/>
+            <TextField fx:id="landmark2TextField"/>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Connect" onAction="#connectLandmarks"/>
+            <Button text="Find One Path" onAction="#highlightPath"/>
+            <Button text="Find Paths" onAction="#highlightPaths"/>
+            <TextField fx:id="limitTextField" promptText="5" />
+            <Label text="Limit" style="-fx-text-fill: white;"/>
+            <Button text="Revert" onAction="#revert"/>
+            <Button text="Connections" onAction="#onPrintButtonClicked"/>
+        </HBox>
+    </VBox>
 </VBox>
 

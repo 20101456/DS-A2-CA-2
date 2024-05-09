@@ -1,6 +1,7 @@
 package Manager;
 
 import Application.GraphNodeAL;
+import Application.Landmark;
 import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
 import javafx.scene.paint.Color;
@@ -31,6 +32,10 @@ public class GraphManager {
             Point point = node.getData();
             connectToNeighbors(point, node);
         }
+    }
+
+    public GraphNodeAL<Point> getNode(Landmark landmark) {
+        return nodes.get(landmark);
     }
 
     private void connectToNeighbors(Point point, GraphNodeAL<Point> node) {

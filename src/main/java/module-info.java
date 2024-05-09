@@ -3,6 +3,7 @@ module route.cityroutefinder {
     requires javafx.fxml;
     requires jmh.core;
     requires java.desktop;
+    requires org.apache.commons.csv;
 
 
     opens Application to javafx.fxml;
